@@ -234,7 +234,7 @@ export class ForwardWord extends EmacsCommand {
 
     const repeat = prefixArgument === undefined ? 1 : prefixArgument;
     return createParallel(repeat, () =>
-      vscode.commands.executeCommand<void>(isInMarkMode ? "cursorWordRightSelect" : "cursorWordRight")
+      vscode.commands.executeCommand<void>(isInMarkMode ? "cursorWordPartRightSelect" : "cursorWordPartRight")
     );
   }
 }
@@ -254,7 +254,7 @@ export class BackwardWord extends EmacsCommand {
 
     const repeat = prefixArgument === undefined ? 1 : prefixArgument;
     return createParallel(repeat, () =>
-      vscode.commands.executeCommand<void>(isInMarkMode ? "cursorWordLeftSelect" : "cursorWordLeft")
+      vscode.commands.executeCommand<void>(isInMarkMode ? "cursorWordPartLeftSelect" : "cursorWordPartLeft")
     );
   }
 }
